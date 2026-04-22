@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A read on where AI fits in Augier's Agentic Agent Flow</title>
+<meta name="description" content="Saw the Agentic Agent Flow copy on the site. You are chaining LLM calls across search, draft, matchmaking, and BI. I have a hypothesis about where that chain starts eating your weekends once a real SMB contractor points it at a live SAM.gov pipeline." />
+<meta name="robots" content="noindex" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="gradient-field" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-logo">
+    <img src="logo.png" alt="Augier AI" />
+  </div>
+  <div class="nav-meta">Prepared for Augier AI, April 2026</div>
+</header>
+
+<section class="hero">
+  <span class="kicker">For Muntaz and the Augier team</span>
+  <h1>A read on where AI actually fits in Augier's Agentic Agent Flow, and where a second layer would earn its keep.</h1>
+  <p class="lede">A short, specific note on the orchestration question behind the Search, Write, Match, Manage, and BI stack. Written before the booth conversation, not after.</p>
+</section>
+
+<section class="stat-strip" aria-label="Context">
+  <div class="stat">
+    <div class="stat-value">60 / 30 / 10</div>
+    <div class="stat-label">Typical split: traditional code, rules, real AI</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">5 modules</div>
+    <div class="stat-label">Search, Write, Match, Manage, BI</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">1 question</div>
+    <div class="stat-label">Which step do you rerun by hand most often</div>
+  </div>
+</section>
+
+<main>
+
+  <section class="section">
+    <div class="section-label">The opening</div>
+    <h2>You are one of the few SMB-priced GovCon tools with LLMs across the entire bid lifecycle.</h2>
+    <p>Augier AI puts model calls into search, write, teaming, manage, and business intelligence. The site headline is clear. Empower small businesses to win government contracts. Unlock $1.3 trillion. The Agentic Agent Flow is the wedge against HigherGov, GovTribe, and Deltek.</p>
+    <p>The real question sits one layer below the copy. What happens when the chain runs on a live SAM.gov search and a small contractor's own past bids, agency history, and response style all want to load into context at the same time. That is the place where demo-to-production slippage lives, and it is the place we want to talk about at the booth.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-label">The frame</div>
+    <h2>Most teams building agentic products assume the whole pipeline is an AI problem. The useful split is closer to 60 / 30 / 10.</h2>
+
+    <div class="layer-list">
+      <div class="layer">
+        <div class="pct">60%<small>Traditional</small></div>
+        <div class="layer-body">
+          <h4>Clean database design and traditional code</h4>
+          <p>SAM.gov ingestion, FPDS joins, NAICS lookups, user auth, billing, workspace state. Postgres and application code hold this layer. An LLM does not belong here.</p>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="pct">30%<small>Rules</small></div>
+        <div class="layer-body">
+          <h4>Rule-based logic</h4>
+          <p>Set-aside filters, NAICS matching, size-standard checks, agency-specific response patterns, section gates for proposal structure. Deterministic, testable, cheap.</p>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="pct">10%<small>Real AI</small></div>
+        <div class="layer-body">
+          <h4>The ten percent worth a model call</h4>
+          <p>Intent extraction from a contractor's history, matching a solicitation to a bid pattern, writing a paragraph that reads like an incumbent wrote it. This is where the Agentic Agent Flow earns its keep.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Mapped to your stack</div>
+    <h2>Where each Augier module probably sits.</h2>
+    <p>A working read, not a verdict. The booth conversation is where this gets sharpened.</p>
+
+    <div class="modules" role="table">
+      <div class="module-row head" role="row">
+        <div role="columnheader">Module</div>
+        <div role="columnheader">Likely split</div>
+        <div role="columnheader">Where context leaks</div>
+      </div>
+      <div class="module-row" role="row">
+        <div>Search</div>
+        <div><span class="tag code">~70% traditional</span></div>
+        <div>Ranking and intent extraction on the tail</div>
+      </div>
+      <div class="module-row" role="row">
+        <div>Manage</div>
+        <div><span class="tag code">~70% traditional</span></div>
+        <div>Pipeline state, not a model problem</div>
+      </div>
+      <div class="module-row" role="row">
+        <div>Write</div>
+        <div><span class="tag ai">Real AI</span></div>
+        <div>Past bids plus agency voice plus solicitation all in one prompt</div>
+      </div>
+      <div class="module-row" role="row">
+        <div>Match (teaming)</div>
+        <div><span class="tag ai">Real AI</span></div>
+        <div>Capability vectors vs. set-aside filters</div>
+      </div>
+      <div class="module-row" role="row">
+        <div>Business Intelligence</div>
+        <div><span class="tag rules">Mixed</span></div>
+        <div>Running more model calls than it should</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">The methodology</div>
+    <h2>Interpretable Context Methodology.</h2>
+
+    <div class="paper">
+      <div class="paper-mark">ICM</div>
+      <div>
+        <h4>Folder Structure as Agent Architecture</h4>
+        <p>Organize agent context as a layered filesystem. Identity, policy, working memory, and agency-specific knowledge live in separate layers. Agents read what they need and nothing more. Submitted to ACM TiiS. MIT-licensed. 52-member practitioner community behind it.</p>
+        <div class="links">
+          <a href="https://github.com/RinDig/Interpretable-Context-Methodology-ICM-" target="_blank" rel="noopener">github.com/RinDig/Interpretable-Context-Methodology-ICM-</a>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top: 20px;">Applied to the Agentic Agent Flow, ICM is a direct answer to the chained-LLM context problem. A contractor's past-bid layer does not mix with an agency's response-style layer. The Write module does not have to rediscover context every run. Debugging a failed draft stops being a grep across prompts.</p>
+  </section>
+
+  <section class="section">
+    <div class="two-col">
+      <div>
+        <div class="section-label">The relevant case</div>
+        <h2>Feeld. A product company with a CTO in the same seat Augier's leadership is in.</h2>
+        <p>Andrew Santus did not need training. He needed a second set of eyes on how AI fit inside a shipping codebase. The scoped engagement with Eduba delivered a workshop, advisory calls, an Organizational Context Architecture, and a Strategic Operations Framework. Builder-to-builder, no slide deck theater.</p>
+        <div class="cred-line">Jake also built an online community to 22,000 members in 5 weeks. Context on distribution instinct, not a pitch.</div>
+      </div>
+      <div>
+        <div class="case">
+          <div class="case-name">Engagement shape</div>
+          <h3>Scoped sprint for a founder-operator team.</h3>
+          <p>Workshop on the orchestration layer. Advisory calls on the hot spots. A written context architecture your team can extend. A framework for deciding which new feature belongs on which layer before you build it.</p>
+          <p style="margin-top: 16px; font-size: 13px; opacity: 0.8;">Eduba partners with NLP Logix for work that sits below the orchestration layer. NLP Logix has been in machine learning since 2011 and runs over 150 data scientists, so the data pipeline side of SAM.gov and FPDS ingestion has a home if that conversation opens.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="cta" role="region" aria-label="Next step">
+      <div>
+        <div class="section-label" style="color: rgba(255,255,255,0.7);">Next step</div>
+        <h2>30 minutes with Matt Creamer, Eduba's CRO.</h2>
+        <p>Bring the part of the Agentic Agent Flow you keep rerunning by hand. We will work the chain together.</p>
+        <div class="host">Matt Creamer · CRO, Eduba · <a href="mailto:thecro@eduba.io" style="color: rgba(255,255,255,0.85);">thecro@eduba.io</a></div>
+      </div>
+      <div>
+        <a class="btn" href="https://calendly.com/thecro-eduba/30min" target="_blank" rel="noopener">Book the 30 minutes</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>Prepared by Eduba, <a href="https://eduba.io" target="_blank" rel="noopener">eduba.io</a></div>
+  <div>For Augier AI · eMerge Americas 2026 · Booth SMB3</div>
+</footer>
+
+</body>
+</html>
